@@ -22,7 +22,7 @@ h1{
     /*1value:  on four direction*/ 
     /*2values: border-style: top_bottom left_right;*/
     /*3values: border-style: top right_left bottom; */
-    /*4values: border-style: top right_left bottom;*/
+    /*4values: border-style: top right bottom left;*/
 
 }
 a[href*="github"]:hover{
