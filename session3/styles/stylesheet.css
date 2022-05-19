@@ -22,7 +22,7 @@ h1{
     /*1value:  on four direction*/ 
     /*2values: border-style: top_bottom left_right;*/
     /*3values: border-style: top right_left bottom; */
-    /*4values: border-style: top right_left bottom;*/
+    /*4values: border-style: top right bottom left;*/
 
 }
 a[href*="github"]:hover{
@@ -45,9 +45,13 @@ h2::first-letter{
 /* header a:last-of-type{
     margin-left: 20px;
 } */
-header a:nth-of-type(2){
+/* header a:nth-of-type(2){
+    margin-left: 20px;
+} */
+header:last-child{
     margin-left: 20px;
 }
+
 .education .education-list > li:first-child{
     font-style: italic;
 }
