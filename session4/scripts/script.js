@@ -119,7 +119,7 @@ function findStudentInVancouver(students) {
 function findStudentOlderThan30(students) {
     students.filter((student) => {
         if (student.age > 30) {
-            console.log(student.name);
+            console.log(`student older than 30 ${student.name}`);
         }
     });
 }
