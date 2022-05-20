@@ -1,18 +1,21 @@
-// for (let i = 1; i <= 10; i++) {
-//   console.log(Math.pow(2, i));
-// }
-// let i = 1;
-// while (i <= 10) {
-//   console.log(Math.pow(2, i));
-//   i++;
-// }
+//JS loops practice
+
+/* for (let i = 1; i <= 10; i++) {
+  console.log(Math.pow(2, i));
+}
+let i = 1;
+while (i <= 10) {
+  console.log(Math.pow(2, i));
+  i++;
+}
 
 
-// let name;
-// do{ 
-//     name = prompt("What is your name?");
-// }while(name.length ===1 || !isNaN(name));
-// alert(`Hello ${name}`);
+let name;
+do{ 
+    name = prompt("What is your name?");
+}while(name.length ===1 || !isNaN(name));
+alert(`Hello ${name}`);
+*/
 
 //JS Function Practice
 //define 2 functions
@@ -20,31 +23,53 @@ function totalPriceOfService(bill, taxRate = 0.12, tipRate = 0.15) {
     return bill + (bill * taxRate) + (bill * tipRate);
 }
 
-function getTotalPrice(bill) {
+function getTotalPrice1(bill) {
+    console.log(totalPriceOfService(bill));
+}
+
+//anonymous function
+let getTotalPrice2 = function(bill) {
+    console.log(totalPriceOfService(bill));
+}
+
+//arrow function
+let getTotalPrice = (bill) => {
     console.log(totalPriceOfService(bill));
 }
 
 getTotalPrice(100);
 
 //JS Objects Practice
+//define an object
 
-// let car ={
-//     make: "Honda",
-//     color: "red",
-//     year: "2018",
-// }
+/* one way to define an object 
+let car ={
+    make: "Honda",
+    color: "red",
+    year: "2018",
+}*/
+
+/* another way to define an object
+let car = new Object();
+car.make = "Honda";
+car.color = "red";
+car.year = "2018";
+*/
 
 
-//[] bracket notation vs . dot notation
-//use dot notation when you know the name of the property
-// console.log(car.color);
+/*accessing a property of an object
+2 ways: [] bracket notation vs . dot notation
+1. use dot notation when you know the name of the property
+example: console.log(car.color);
 
-//use bracket notation when you don't know the name of the property
-// for (let key in car) {
-//     console.log(key, car[key]);
-// }
+2. use bracket notation when you don't know the name of the property
+example: for (let key in car) {
+     console.log(key, car[key]);
+ }
+ */
 
-//Array practice
+//JS Array practice
+//define an array
 let students = [
     {
     name: "Cristian",
@@ -62,7 +87,7 @@ let students = [
     location: "Vancouver"
     }
 ];
-
+//4 ways iterate through an array
 function findStudentInVancouver(students) {
     /*
     for(let i = 0; i < students.length; i++) {
@@ -90,4 +115,5 @@ function findStudentInVancouver(students) {
 
 }
 
+//call a function
 findStudentInVancouver(students);
