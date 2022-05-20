@@ -7,11 +7,26 @@
 //   i++;
 // }
 
+
 // let name;
 // do{ 
 //     name = prompt("What is your name?");
 // }while(name.length ===1 || !isNaN(name));
 // alert(`Hello ${name}`);
+
+//JS Function Practice
+//define 2 functions
+function totalPriceOfService(bill, taxRate = 0.12, tipRate = 0.15) {
+    return bill + (bill * taxRate) + (bill * tipRate);
+}
+
+function getTotalPrice(bill) {
+    console.log(totalPriceOfService(bill));
+}
+
+getTotalPrice(100);
+
+//JS Objects Practice
 
 // let car ={
 //     make: "Honda",
@@ -19,11 +34,17 @@
 //     year: "2018",
 // }
 
+
+//[] bracket notation vs . dot notation
+//use dot notation when you know the name of the property
 // console.log(car.color);
 
+//use bracket notation when you don't know the name of the property
 // for (let key in car) {
 //     console.log(key, car[key]);
 // }
+
+//Array practice
 let students = [
     {
     name: "Cristian",
@@ -41,6 +62,7 @@ let students = [
     location: "Vancouver"
     }
 ];
+
 function findStudentInVancouver(students) {
     /*
     for(let i = 0; i < students.length; i++) {
