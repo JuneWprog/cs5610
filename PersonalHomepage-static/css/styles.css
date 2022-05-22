@@ -7,11 +7,14 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #fff;
 }
+a{
+    text-decoration: none;
+}
 header {
     grid-row:1/2;
     height: 3rem;
     width: 100%;
-    background-color: rgb(219, 231, 235);
+    background-color:#e2e2d8;
     justify-content: center;
     align-items: center;
     position:fixed;
@@ -36,7 +39,7 @@ nav ul {
     margin-top: .4rem;
     margin-right: 4rem;
 }
-li a {
+.menu a {
     display:inline-block;
     padding:1em;
     margin-right: 1rem;
@@ -45,14 +48,14 @@ li a {
     text-decoration: none;
 }
 
-li a:link {
-    color: rgb(39, 38, 112);
+.menu a:link {
+    color: #342056;
 }
-li a:hover{
-    color: rgb(17, 21, 238);
+.menu a:hover{
+    color: #5454c5;
 }
-li a:visited{
-    color: rgb(111, 120, 221);
+.menu a:visited{
+    color: #220e24;
 }
 
 main {  
@@ -82,9 +85,13 @@ footer{
     color: white;
 }
 
-.social-media-icon{
-    width:25px;
-    height:25px;
-    margin:0 10px;
-   
+.fa-brands {
+    color:rgb(240, 234, 234);
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-right: 1rem;
+    padding-bottom: 1rem;
 }
