@@ -1,43 +1,67 @@
-li{
-    list-style-type:none;
-}
-a{
-    text-decoration:none;
-}
-menu.li{
-    display:inline;
-}
-.menubar{
-    color: black;
-    font-family: 'Padauk', sans-serif;
-    font-size: 25px;
-}
-.menubar:link{
-    color: #0099ff;
-}
-.menubar:hover{
-    color:grey;
-}
-.menubar:visited{
-    color:purple;
-}
-nav{
-    background-color: #f2f2f2;
-    border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    height: 50px;
-    width: 100%;
-}
-body{
-    background-image: url(images/background.webp);
-    background-position: center; 
-    background-repeat: no-repeat;
+
+body {
+    background: url("../images/background.jpg") no-repeat center center fixed; 
+    display:grid;
+    grid-template-rows: 8% 85% 7%;
     background-size: cover; 
-    justify-content: space-around;
-    align-items: center;
     font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+header {
+    grid-row:1/2;
+    height: 3rem;
+    width: 100%;
+    background-color: rgb(219, 231, 235);
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    z-index: 1;
+    top: 0px;
+    left:0px;
+}
+.logo {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    float: left; 
+    margin-top: .3rem;
+    margin-left: 4rem;
+    
 }
 
+nav ul {
+    display:flex;
+    list-style-type:none; 
+    float:right;
+    margin-top: .4rem;
+    margin-right: 4rem;
+}
+li a {
+    display:inline-block;
+    padding:1em;
+    margin-right: 1rem;
+    font-size: 1rem;
+    font-family: 'Padauk', sans-serif;
+    text-decoration: none;
+}
+
+li a:link {
+    color: rgb(39, 38, 112);
+}
+li a:hover{
+    color: rgb(17, 21, 238);
+}
+li a:visited{
+    color: rgb(111, 120, 221);
+}
+
+main {  
+    grid-row:2/3;
+    display:grid;
+    grid-template-columns: 20% 80%;
+    /* justify-content: center;
+    align-items: center; */
+}
 figure {
     display: flex;
     flex-flow: column;
@@ -45,15 +69,22 @@ figure {
     max-width: 220px;
     margin: auto;
 }
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 40%;
+}
 footer{
+    grid-row:3/4;
     padding: 10px;
     text-align: center;
     font-size: 12px;
-    color: black;
+    color: white;
 }
 
 .social-media-icon{
     width:25px;
     height:25px;
+    margin:0 10px;
    
 }
