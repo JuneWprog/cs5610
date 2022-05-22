@@ -87,6 +87,7 @@ let students = [
     location: "Vancouver"
     }
 ];
+
 //4 ways iterate through an array
 function findStudentInVancouver(students) {
     /*
