@@ -10,9 +10,17 @@ body {
 a{
     text-decoration: none;
 }
+img{
+
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-radius: 10%; 
+
+}
 header {
     grid-row:1/2;
-    height: 3rem;
+    height:4rem;
     width: 100%;
     background-color:#e2e2d8;
     justify-content: center;
@@ -27,7 +35,6 @@ header {
     width: 40px;
     display: flex;
     float: left; 
-    margin-top: .3rem;
     margin-left: 4rem;
     
 }
@@ -62,21 +69,56 @@ main {
     grid-row:2/3;
     display:grid;
     grid-template-columns: 20% 80%;
-    /* justify-content: center;
-    align-items: center; */
+    grid-template-rows: auto;
 }
 figure {
-    display: flex;
-    flex-flow: column;
+    grid-column: 1/2;
+    margin-top: 3rem;
+}
+
+.profile {
+    margin-top:2rem;
+}
+section{
+    grid-column: 2/3;
     padding: 5px;
-    max-width: 220px;
-    margin: auto;
+    margin: 4rem;
 }
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 40%;
+
+p {
+    font-size: 1.2rem;
+    font-family: 'Padauk',Arial, sans-serif;
+    color: #c3c1c7;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: block;
 }
+h1{
+    font-size: 3rem;
+    color: #f6f4fa;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+.like{
+    font-size: 3rem;
+    font-family: 'Padauk', Times, serif;
+    color: #c3c1c7;
+    width:70%;
+    margin-top: 1rem;
+}
+.intro{
+    font-size: 1.5rem;
+    font-family: 'Padauk', Times, serif;
+    color: #f6f4fa;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 70%;
+}
+.course_link{
+    color:#ffff;
+    font-size: 1.7rem;
+}
+
 footer{
     grid-row:3/4;
     padding: 10px;
