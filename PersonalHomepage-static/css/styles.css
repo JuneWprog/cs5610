@@ -114,6 +114,11 @@ h1{
     margin-bottom: 1rem;
     width: 70%;
 }
+.intro p>a{
+    color: #c3c1c7;
+    font-size:2rem;
+    text-decoration: underline;
+}
 .course_link{
     color:#ffff;
     font-size: 1.7rem;
@@ -127,13 +132,44 @@ footer{
     color: white;
 }
 
-.fa-brands {
+.social-media-icon {
     color:rgb(240, 234, 234);
     font-family: FontAwesome;
     font-weight: normal;
     font-style: normal;
     font-size: 1.5rem;
-    text-decoration: none;
     margin-right: 1rem;
     padding-bottom: 1rem;
+}
+
+/* about me style */
+.aboutme-link {
+    text-decoration: underline;
+    color: #c3c1c7;
+}
+
+#brief-intro{
+    font-size: 1.5rem;
+    font-family: 'Padauk', Times, serif;
+    color: #f6f4fa;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 70%;
+}
+
+/*education style*/
+
+#neu-logo{
+    display: inline-block;
+    height:20px;
+    width:20px;
+}
+#neu-degree{
+    display: inline-block;
+    font-size: 1.2rem;
+    font-family: 'Padauk', Times, serif;
+    color: #f6f4fa;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 70%;
 }
