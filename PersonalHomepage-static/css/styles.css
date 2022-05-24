@@ -114,10 +114,13 @@ h1{
     margin-bottom: 1rem;
     width: 70%;
 }
-.intro p>a{
-    color: #c3c1c7;
+.intro a:link{
+    color: #dbd7e4;
     font-size:2rem;
     text-decoration: underline;
+}
+.intro a:visited{
+    color: #c031d3;
 }
 .course_link{
     color:#ffff;
