@@ -76,5 +76,48 @@ function listItemSquareMarker(){
 listItemSquareMarker();
 
 /* --------------activity 4------------ */
+//DOM Event Handlers with JS
+// 1. inline event handler (don't use)
+// onclick="getArea()"
+// 2. event handler properties()
+// button.onclick = getArea; 
+// 3. addEventListener(use this)
+// button.addEventListener("click", getArea);
+
+//// 1. event handler with anonymous function
+//// 2. event handler with named function
+//// 3. event handler with arrow function
+
+
+function toggleButtonText1(){
+    let btn = document.querySelector("#updateImage");
+    btn.addEventListener('click', ()=>{
+        if (btn.textContent === "clicked!") {
+            btn.textContent = "Click Me!";
+        } else {
+            btn.textContent = "clicked!";
+        }
+    });
+}
+
+
+function toggleButtonText2(){
+    let btn = document.querySelector("#updateImage");
+    btn.addEventListener('click', function(){
+        if (btn.textContent === "clicked!") {
+            btn.textContent = "Click Me!";
+        } else {
+            btn.textContent = "clicked!";
+        }
+    });
+}
+
+
+toggleButtonText();
+
+
+
+
+
 /* --------------activity 5------------ */
 /* --------------activity 6------------ */
