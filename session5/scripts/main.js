@@ -56,10 +56,19 @@ createShoppingList();
 
 function listItemSquareMarker(){
     let shoppingElement = document.querySelector(".shopping");
-    //3 ways to set the style for a list item
+    //4 ways to set the style for a list item
 
+    //1. set inline style
+    //shoppingElement.style.listStyleType = "square";
+    //shoppingElement.style ="listStyleType: square";
+
+    //2. set inline style with setAttribute
     //shoppingElement.setAttribute("style", "list-style-type: square");
+
+    //3. set style in css file and use setAttribute(class)
     //shoppingElement.setAttribute("class", "square-marker");
+
+    //4. set style in css file and use classList
     shoppingElement.classList.add("square-marker");
     //shoppingElement.classList.remove("square-marker");
 }
