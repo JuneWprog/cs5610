@@ -50,9 +50,22 @@ function createShoppingList(){
     });
 }
 
-// createShoppingList();
+createShoppingList();
 
 /* --------------activity 3------------ */
+
+function listItemSquareMarker(){
+    let shoppingElement = document.querySelector(".shopping");
+    //3 ways to set the style for a list item
+
+    //shoppingElement.setAttribute("style", "list-style-type: square");
+    //shoppingElement.setAttribute("class", "square-marker");
+    shoppingElement.classList.add("square-marker");
+    //shoppingElement.classList.remove("square-marker");
+}
+
+listItemSquareMarker();
+
 /* --------------activity 4------------ */
 /* --------------activity 5------------ */
 /* --------------activity 6------------ */
