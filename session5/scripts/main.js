@@ -50,7 +50,7 @@ function createShoppingList(){
     });
 }
 
-createShoppingList();
+//createShoppingList();
 
 /* --------------activity 3------------ */
 
@@ -73,7 +73,7 @@ function listItemSquareMarker(){
     //shoppingElement.classList.remove("square-marker");
 }
 
-listItemSquareMarker();
+//listItemSquareMarker();
 
 /* --------------activity 4------------ */
 //DOM Event Handlers with JS
@@ -113,11 +113,96 @@ function toggleButtonText2(){
 }
 
 
-toggleButtonText();
+//toggleButtonText2();
+
+
+
+//event handler with element delegation
+//use event bubbling to set event handler on parent element.
+function changeShoppingCarStyle() {
+    let shoppingCart = document.querySelector("#shoppingCart");
+    shoppingCart.src = "images/shoppingCart.png";
+    let buttons = document.querySelector("body");
+    buttons.addEventListener("click", (event) => {
+        if (event.target.textContent === "Red") {
+            shoppingCart.alt = "shopping cart with red background";
+            shoppingCart.classList.toggle(".red-shopping-cart");
+        } else if (event.target.textContent === "Blue") {
+            shoppingCart.alt = "shopping cart with blue background";
+            shoppingCart.classList.toggle(".blue-shopping-cart");
+        } else if (event.target.textContent === "Green") {
+            shoppingCart.alt = "shopping cart with green background";
+            shoppingCart.classList.toggle(".green-shopping-cart");
+        }
+    });
+}
+//changeShoppingCarStyle();
+
 
 
 
 
 
 /* --------------activity 5------------ */
+
+
+
+//event delegation
+function changeBackGround1() {
+    let parentNode = document.querySelector("div");
+    parentNode.addEventListener("mouseover", (event) => {
+        if (event.target.textContent === "Red") {
+            body.style.backgroundColor = "red";
+        } else if (event.target.textContent === "Blue") {
+            body.style = "background-color: blue";
+        } else if (event.target.textContent === "Green") {
+            body.style = "background-color: green";
+        }
+    });
+}
+
+//add event listener to each button
+// function changeBackGround2() {
+//     document.querySelector("#shoppingCart+button").addEventListener("mouseover", (event) => {body.style.backgroundColor = "red";});
+//     document.querySelector("button:last-of-type").addEventListener("mouseover", (event) => {body.style.backgroundColor = "green";});
+//     document.querySelector("button:nth-last-of-type(2)").addEventListener("mouseover", (event) => {body.style.backgroundColor = "blue";});
+// }
+
+
+//changeBackGround1();
+
+
+
 /* --------------activity 6------------ */
+//event delegation
+function changeBackGroundDelegation() {
+    let parentNode = document.querySelector("div");
+    parentNode.addEventListener("mouseover", (event) => {
+        if (event.target.textContent === "Red") {
+            body.style.backgroundColor = "red";
+        } else if (event.target.textContent === "Blue") {
+            body.style = "background-color: blue";
+        } else if (event.target.textContent === "Green") {
+            body.style = "background-color: green";
+        }
+    });
+}
+
+
+function toggleShoppingItem(){
+    let shoppingElement = document.querySelector(".shopping");
+    let shoppingList = ['Apple', 'Milk', 'Meatball'];
+    shoppingList.forEach((shoppingItem) =>{
+        let listItem = document.createElement("li");
+        listItem.textContent = shoppingItem;
+        shoppingElement.appendChild(listItem);
+    });
+    shoppingElement.addEventListener("click", (event) => {
+        event.target.style = "text-decoration: line-through";
+    });
+}
+
+toggleShoppingItem();
+
+
+
