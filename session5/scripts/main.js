@@ -12,20 +12,27 @@ function setRadiusText(input){
     //let radiusText = document.getElementById("radius");
     //radiusText.innerHTML = `Value provided by user: ${promptInput()}`;
     let radiusElement = document.querySelector("#radius");
-    radiusElement.textContent= `Value provided by user: ${input}`;
+
+    //textContent, innerHTML, innerText
+
+    //radiusElement.textContent = `Value provided by user: ${input}`;
+    //radiusElement.innerText = `Value provided by user: ${input}`;
+    //radiusElement.innerHTML += input;
+    radiusElement.innerText += input;
+
 }
 
 function setAreaText(input){
     let resultElement = document.querySelector("#result");
     //var resultText = document.getElementById("result");
     if (input == null || input == "") {
-        resultElement.textContent = "No input provided";
+        resultElement.innerText = "No input provided";
     }else if (isNaN(input)){
-        resultElement.textContent = "Input is not a number";
+        resultElement.innerText = "Input is not a number";
     }else {
     let radius = parseFloat(input, 10);
     let area = calculateCircleArea(radius);
-    resultElement.innerHTML = `Area of circle with radius ${input}: ${area}`;
+    resultElement.innerText = `Area of circle with radius ${input}: ${area}`;
     }
 }
 
@@ -36,21 +43,23 @@ function getArea(){
 }
 
 
-// getArea();
+getArea();
 
 
 /* --------------activity 2------------ */
-function createShoppingList(){
+let shoppingList = ['Apple', 'Milk', 'Meatball', 'green'];
+
+function createShoppingList(shoppingList){
     let shoppingElement = document.querySelector(".shopping");
-    let shoppingList = ['Apple', 'Milk', 'Meatball'];
     shoppingList.forEach((shoppingItem) =>{
         let listItem = document.createElement("li");
-        listItem.textContent = shoppingItem;
-        shoppingElement.appendChild(listItem);
+        listItem.innerText = shoppingItem;
+        //shoppingElement.appendChild(listItem);
+        shoppingElement.append(listItem);
     });
 }
 
-//createShoppingList();
+createShoppingList(shoppingList);
 
 /* --------------activity 3------------ */
 
@@ -75,6 +84,17 @@ function listItemSquareMarker(){
 
 //listItemSquareMarker();
 
+function greenItem(){
+    let shoppingItems = document.querySelectorAll(".shopping li");
+    for(let item of shoppingItems) {
+        if (item.textContent.includes('green')) {
+            item.style = "color: green";
+        }
+    }
+}
+
+greenItem();
+
 /* --------------activity 4------------ */
 //DOM Event Handlers with JS
 // 1. inline event handler (don't use)
@@ -84,9 +104,8 @@ function listItemSquareMarker(){
 // 3. addEventListener(use this)
 // button.addEventListener("click", getArea);
 
-//// 1. event handler with anonymous function
-//// 2. event handler with named function
-//// 3. event handler with arrow function
+
+//// 1. event handler with arrow function
 
 
 function toggleButtonText1(){
@@ -100,6 +119,7 @@ function toggleButtonText1(){
     });
 }
 
+//// 2. event handler with anonymous function
 
 function toggleButtonText2(){
     let btn = document.querySelector("#updateImage");
@@ -112,31 +132,33 @@ function toggleButtonText2(){
     });
 }
 
+//// 3. event handler with named function
+let updateImageBtn = document.querySelector("#updateImage");
+
+function toggleButtonText3(){
+   
+    if (updateImageBtn.textContent === "clicked!") {
+        updateImageBtn.textContent = "Click Me!";
+    } else {
+        updateImageBtn.textContent = "clicked!";
+    }
+}
+
+// updateImageBtn.addEventListener("click", toggleButtonText3);
+
 
 //toggleButtonText2();
 
-
-
-//event handler with element delegation
-//use event bubbling to set event handler on parent element.
 function changeShoppingCarStyle() {
     let shoppingCart = document.querySelector("#shoppingCart");
     shoppingCart.src = "images/shoppingCart.png";
-    let buttons = document.querySelector("body");
-    buttons.addEventListener("click", (event) => {
-        if (event.target.textContent === "Red") {
-            shoppingCart.alt = "shopping cart with red background";
-            shoppingCart.classList.toggle(".red-shopping-cart");
-        } else if (event.target.textContent === "Blue") {
-            shoppingCart.alt = "shopping cart with blue background";
-            shoppingCart.classList.toggle(".blue-shopping-cart");
-        } else if (event.target.textContent === "Green") {
-            shoppingCart.alt = "shopping cart with green background";
-            shoppingCart.classList.toggle(".green-shopping-cart");
-        }
-    });
+    shoppingCart.alt = "shopping cart icon";
+    shoppingCart.width= "50";
+    shoppingCart.height = "50";
 }
-//changeShoppingCarStyle();
+updateImageBtn.addEventListener("click", changeShoppingCarStyle, {once: true});
+
+// updateImageBtn.removeEventListener("click", changeShoppingCarStyle);
 
 
 
@@ -145,31 +167,26 @@ function changeShoppingCarStyle() {
 
 /* --------------activity 5------------ */
 
+function changeButtonColor(event) {
+    // if (event.target.textContent === "Red") {
+    //     event.target.backgroundColor = "red";
+    // } else if (event.target.textContent === "Blue") {
+    //     event.target.backgroundColor= "blue";
+    // } else if (event.target.textContent === "Green") {
+    //     event.target.backgroundColor = "green";
+    // }
+    event.target.style.backgroundColor = event.target.textContent;
+}
+
+let colorButtons = document.querySelectorAll("img ~ button");
+for(let button of colorButtons) {
+    button.addEventListener("mouseover", changeButtonColor);
+}
+
 
 
 //event delegation
-function changeBackGround1() {
-    let parentNode = document.querySelector("div");
-    parentNode.addEventListener("mouseover", (event) => {
-        if (event.target.textContent === "Red") {
-            body.style.backgroundColor = "red";
-        } else if (event.target.textContent === "Blue") {
-            body.style = "background-color: blue";
-        } else if (event.target.textContent === "Green") {
-            body.style = "background-color: green";
-        }
-    });
-}
 
-//add event listener to each button
-// function changeBackGround2() {
-//     document.querySelector("#shoppingCart+button").addEventListener("mouseover", (event) => {body.style.backgroundColor = "red";});
-//     document.querySelector("button:last-of-type").addEventListener("mouseover", (event) => {body.style.backgroundColor = "green";});
-//     document.querySelector("button:nth-last-of-type(2)").addEventListener("mouseover", (event) => {body.style.backgroundColor = "blue";});
-// }
-
-
-//changeBackGround1();
 
 
 
@@ -178,13 +195,7 @@ function changeBackGround1() {
 function changeBackGroundDelegation() {
     let parentNode = document.querySelector("div");
     parentNode.addEventListener("mouseover", (event) => {
-        if (event.target.textContent === "Red") {
-            body.style.backgroundColor = "red";
-        } else if (event.target.textContent === "Blue") {
-            body.style = "background-color: blue";
-        } else if (event.target.textContent === "Green") {
-            body.style = "background-color: green";
-        }
+       event.target.style.backgroundColor = event.target.innerText;
     });
 }
 
@@ -203,6 +214,21 @@ function toggleShoppingItem(){
 }
 
 toggleShoppingItem();
+changeBackGroundDelegation();
 
+/* --------------activity 7------------ */
 
+//updateImageBtn.textContent = localStorage.getItem("buttonText") || "Click Me!";
+function toggleButtonTextPersist(){
+   
+    if (updateImageBtn.textContent === "clicked!") {
+        updateImageBtn.textContent = "Click Me!";
+        localStorage.setItem("buttonText", "Click Me!");
+    } else {
+        updateImageBtn.textContent = "clicked!";
+        localStorage.setItem("buttonText", "clicked!");
 
+    }
+}
+
+updateImageBtn.addEventListener("click", toggleButtonTextPersist);
