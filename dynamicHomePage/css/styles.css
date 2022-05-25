@@ -6,6 +6,7 @@ body {
     background-size: cover; 
     font-family: 'Poppins', sans-serif;
     color: #fff;
+    margin:0%;
 }
 a{
     text-decoration: none;
@@ -25,10 +26,9 @@ header {
     background-color:#e2e2d8;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: sticky;
     z-index: 1;
     top: 0px;
-   
 }
 .logo {
     height: 40px;
