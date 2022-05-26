@@ -28,12 +28,12 @@ function addDataTime() {
 
     const time = document.createElement('input');
     time.type = 'radio';
-    time.value = "Date";
-    time.id = 'date';
-    time.name = 'date';
+    time.value = "Time";
+    time.id = 'time';
+    time.name = 'time';
 
     let timeLabel = document.createElement('label');
-    timeLabel.htmlFor = 'date';
+    timeLabel.htmlFor = 'time';
     timeLabel.innerText = 'Time';
     dateTimeForm.append(time);
     dateTimeForm.appendChild(timeLabel);
