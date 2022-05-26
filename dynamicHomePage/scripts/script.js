@@ -9,47 +9,67 @@ function addThemeButton(){
 }
 addThemeButton();
 
+function createRadio(name){
+    let radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = name;
+    radio.id = name;
+    radio.value = name;
+    return radio;
+}
+function createLabel(name) {
+    let label = document.createElement('label');
+    label.htmlFor = name;
+    label.innerText = name;
+    return label;
+}
+
+const main = document.querySelector('main');
+let dateTimeForm = document.createElement('form');
+let resultDisplay = document.createElement('span');
 function addDataTime() {
-    let dateTimeForm = document.createElement('form');
-    dateTimeForm.classList.add('data-time');
-
-    const date = document.createElement('input');
-    date.type = 'radio';
-    date.value = "Date";
-    date.id = 'date';
-    date.name = 'date';
-
-    let dateLabel = document.createElement('label');
-    dateLabel.htmlFor = 'date';
-    dateLabel.innerText = 'Date';
+    
+    const date = createRadio("Date");
+    date.classList.add('date-radio');
+    let dateLabel = createLabel('Date');
     dateTimeForm.append(date);
     dateTimeForm.appendChild(dateLabel);
     dateTimeForm.appendChild(document.createElement('br'));
 
-    const time = document.createElement('input');
-    time.type = 'radio';
-    time.value = "Time";
-    time.id = 'time';
-    time.name = 'time';
-
-    let timeLabel = document.createElement('label');
-    timeLabel.htmlFor = 'time';
-    timeLabel.innerText = 'Time';
+    const time = createRadio("Time");
+    time.classList.add('time-radio');
+    let timeLabel = createLabel('Time');
     dateTimeForm.append(time);
     dateTimeForm.appendChild(timeLabel);
     dateTimeForm.appendChild(document.createElement('br'));
 
-    const showDateTime = document.createElement('button');
-    showDateTime.innerText = 'Show Date/Time';
+    const showDateTime = document.createElement('input');
+    showDateTime.type = 'submit';
+    showDateTime.value = 'Show Date/Time';
     dateTimeForm.append(showDateTime);
 
-    const resultDisplay = document.createElement('span');
-    resultDisplay.innerText = new Date().toLocaleString();
+    resultDisplay.innerText ="";
     dateTimeForm.append(resultDisplay);
-    const main = document.querySelector('main');
+   
     main.append(dateTimeForm);
 }
 addDataTime();
 
 
+function displayResult(e){
+    e.preventDefault();
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+    if(document.querySelector('#Date').checked){
+    //format Wed May 25 2022
+    text = today.toDateString();
+    } else if(document.querySelector('#Time').checked){
+    //format 14:00:00 PM
+    text = today.toLocaleTimeString();
+    }
+    resultDisplay.innerText = text;
+    
+}
 
+let form = document.querySelector('form');
+form.addEventListener('submit', displayResult);
