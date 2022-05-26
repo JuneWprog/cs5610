@@ -8,3 +8,48 @@ function addThemeButton(){
     header.append(themeButton);
 }
 addThemeButton();
+
+function addDataTime() {
+    let dateTimeForm = document.createElement('form');
+    dateTimeForm.classList.add('data-time');
+
+    const date = document.createElement('input');
+    date.type = 'radio';
+    date.value = "Date";
+    date.id = 'date';
+    date.name = 'date';
+
+    let dateLabel = document.createElement('label');
+    dateLabel.htmlFor = 'date';
+    dateLabel.innerText = 'Date';
+    dateTimeForm.append(date);
+    dateTimeForm.appendChild(dateLabel);
+    dateTimeForm.appendChild(document.createElement('br'));
+
+    const time = document.createElement('input');
+    time.type = 'radio';
+    time.value = "Date";
+    time.id = 'date';
+    time.name = 'date';
+
+    let timeLabel = document.createElement('label');
+    timeLabel.htmlFor = 'date';
+    timeLabel.innerText = 'Time';
+    dateTimeForm.append(time);
+    dateTimeForm.appendChild(timeLabel);
+    dateTimeForm.appendChild(document.createElement('br'));
+
+    const showDateTime = document.createElement('button');
+    showDateTime.innerText = 'Show Date/Time';
+    dateTimeForm.append(showDateTime);
+
+    const resultDisplay = document.createElement('span');
+    resultDisplay.innerText = new Date().toLocaleString();
+    dateTimeForm.append(resultDisplay);
+    const main = document.querySelector('main');
+    main.append(dateTimeForm);
+}
+addDataTime();
+
+
+
