@@ -25,20 +25,26 @@ const port = 3000;
 // app.get('/', function(req, res) {
 //     res.send('Hello World!')
 // });
-// app.get('/about', (req,rew) => {
-//     res.send("about page");
+// app.get('/aboutme', (req,rew) => {
+//     res.send("about me page");
 // });
-// app.get('/tasks', function(req, res) {
+
+//activity 4 adding more routes
+// app.get('/task', function(req, res) {
 //     res.send('<h1>List of all the tasks </h1>')
 // });
+//activity 4 route parameters
 // //dynamic path 
-// app.get('/tasks/:taskId/user/:username', function(req, res) {
+// app.get('/task/:taskId/user/:username', function(req, res) {
 //     console.log(req.params.taskId);
 //     res.send(`you are viewing task ${req.params.taskId} and 
 //     username ${req.params.username}`);
 // });
+
+//activity5
 // app.use(express.static('public'));
 
+//activity 6
 const tasksRouter = require("../routes/tasks.js");
 app.use("/tasks", tasksRouter);
 
