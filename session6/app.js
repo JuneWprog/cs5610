@@ -45,8 +45,19 @@ const port = 3000;
 // app.use(express.static('public'));
 
 //activity 6
-const tasksRouter = require("../routes/tasks.js");
-app.use("/tasks", tasksRouter);
+// const tasksRouter = require("./routes/tasks");
+// app.use("/tasks", tasksRouter);
+
+//activity7
+const path = require('path');
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
+
+app.get("/tasks/:taskId", (req, res)=>{
+    console.log(req.params.taskId);
+    res.render("task", {id: req.params.taskId});
+});
+
 
 app.listen(port, function() {
 console.log(`Example app listening on port ${port}!`)
