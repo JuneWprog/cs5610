@@ -50,7 +50,7 @@ themeButton.addEventListener('click', toggleTheme);
 function createRadio(name){
     let radio = document.createElement('input');
     radio.type = 'radio';
-    radio.name = name;
+    radio.name = "radio-option";
     radio.id = name;
     radio.value = name;
     return radio;
@@ -64,6 +64,7 @@ function createLabel(name) {
 
 const main = document.querySelector('main');
 let dateTimeForm = document.createElement('form');
+dateTimeForm.setAttribute('method', 'post');
 let resultDisplay = document.createElement('span');
 function addDataTime() {
     
@@ -73,14 +74,12 @@ function addDataTime() {
 
 
     const date = createRadio("Date");
-    date.classList.add('date-radio');
     let dateLabel = createLabel('Date');
     dateTimeForm.append(date);
     dateTimeForm.appendChild(dateLabel);
     dateTimeForm.appendChild(document.createElement('br'));
 
     const time = createRadio("Time");
-    time.classList.add('time-radio');
     let timeLabel = createLabel('Time');
     dateTimeForm.append(time);
     dateTimeForm.appendChild(timeLabel);
@@ -90,6 +89,8 @@ function addDataTime() {
     showDateTime.type = 'submit';
     showDateTime.value = 'Show Date/Time';
     dateTimeForm.append(showDateTime);
+    dateTimeForm.appendChild(document.createElement('br'));
+
 
     resultDisplay.innerText ="";
     dateTimeForm.append(resultDisplay);
@@ -114,7 +115,7 @@ function displayResult(e){
     //format 14:00:00 PM
     text = today.toLocaleTimeString();
     }
-    resultDisplay.innerText = form.innerHTML;
+    resultDisplay.innerText = text;
     form.reset();
     
 }

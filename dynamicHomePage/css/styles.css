@@ -200,6 +200,13 @@ contact-email {
     font-family: 'Padauk', Times, serif;
     border-radius: 5px;  
 }
+
+form {
+    position: relative;
+    top : -30px;
+    left: 24rem;
+}
+
 .body-light{
     background-image: none;
     background-color: #f6f4fa;
