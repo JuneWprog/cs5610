@@ -1,13 +1,51 @@
 function addThemeButton(){
     const themeButton = document.createElement('button');
-    let textSpan = document.createElement('span');
-    textSpan.innerText = 'Theme';
-    themeButton.appendChild(textSpan);
-    themeButton.classList.add('theme-button');
+    themeButton.innerText = 'Theme';
+    themeButton.setAttribute('id', 'theme-button');
     const header = document.querySelector('header');
     header.append(themeButton);
 }
 addThemeButton();
+
+let body = document.querySelector('body');
+let themeButton = document.querySelector('#theme-button');
+let socialIcons = document.querySelectorAll('.social-media-icon');
+
+function changeElemetsToLight(elements){
+    body.classList.add('body-light');
+    elements.forEach(element => element.classList.add('light-theme'));
+}
+
+function changeElemetsToDark(elements){ 
+    body.classList.remove('body-light');
+    
+    elements.forEach((element) => {
+        if (element.classList.contains('light-theme')) {
+            element.classList.remove('light-theme');
+        }
+});
+}
+
+themeButton.textContent = localStorage.getItem("buttonText") || "Dark Mode";
+if (themeButton.textContent === "Light Mode") {
+    changeElemetsToLight(socialIcons);
+}
+
+function toggleTheme(){
+    if (themeButton.textContent === "Dark Mode") {
+        themeButton.textContent = "Light Mode";
+        changeElemetsToLight(socialIcons);
+        localStorage.setItem("buttonText", "Light Mode");
+    } else {
+        themeButton.textContent = "Dark Mode";
+        changeElemetsToDark(socialIcons);
+        localStorage.setItem("buttonText", "Dark Mode");
+    }
+}
+themeButton.addEventListener('click', toggleTheme);
+
+
+
 
 function createRadio(name){
     let radio = document.createElement('input');
@@ -29,6 +67,11 @@ let dateTimeForm = document.createElement('form');
 let resultDisplay = document.createElement('span');
 function addDataTime() {
     
+    const formTitle = document.createElement('h3');
+    formTitle.innerText = 'Display Current Date or Time';
+    dateTimeForm.appendChild(formTitle);
+
+
     const date = createRadio("Date");
     date.classList.add('date-radio');
     let dateLabel = createLabel('Date');
@@ -56,6 +99,10 @@ function addDataTime() {
 addDataTime();
 
 
+
+
+let form = document.querySelector('form');
+
 function displayResult(e){
     e.preventDefault();
     const timeElapsed = Date.now();
@@ -67,9 +114,9 @@ function displayResult(e){
     //format 14:00:00 PM
     text = today.toLocaleTimeString();
     }
-    resultDisplay.innerText = text;
+    resultDisplay.innerText = form.innerHTML;
+    form.reset();
     
 }
 
-let form = document.querySelector('form');
 form.addEventListener('submit', displayResult);
