@@ -1,0 +1,20 @@
+.square-marker{
+    list-style-type: square;
+}
+
+.red-shopping-cart{
+    width: 200px;
+    height: 200px;
+}
+.blue-shopping-cart{
+    width: 400px;
+    height: 400px;
+}
+.green-shopping-cart{
+    width: 800px;
+    height: 800px;
+}
+#shoppingCart {
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,218 @@
+
+body {
+    background: url("../images/background.jpg") no-repeat center center fixed; 
+    display:grid;
+    grid-template-rows: 8% 85% 7%;
+    background-size: cover; 
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin:0%;
+}
+a{
+    text-decoration: none;
+}
+img{
+
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-radius: 10%; 
+
+}
+header {
+    grid-row:1/2;
+    height:4rem;
+    width: 100%;
+    background-color:#e2e2d8;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+}
+.logo {
+    grid-column: 1/2;
+    height: 40px;
+    width: 40px;
+    margin-left: 4rem;
+    align-self: flex-start;
+    
+}
+
+nav { 
+    grid-column: 2/3;
+    position: relative;
+    left: 30rem;
+    width: 50%;
+    align-self:center;
+}
+
+nav ul{
+    display:flex;
+    justify-content: space-around;
+    list-style-type:none; 
+    margin-top: .4rem;
+    margin-right: 8rem;
+}
+.menu a {
+    display:inline-block;
+    padding:1em;
+    margin-right: 1rem;
+    font-size: 1rem;
+    font-family: 'Padauk', sans-serif;
+    text-decoration: none;
+}
+
+.menu a:link {
+    color: #342056;
+}
+.menu a:hover{
+    color: #5454c5;
+}
+.menu a:visited{
+    color: #220e24;
+}
+
+main {  
+    grid-row:2/3;
+    display:grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto;
+}
+figure {
+    grid-column: 1/2;
+    margin-top: 3rem;
+}
+
+.profile {
+    margin-top:2rem;
+}
+section{
+    grid-column: 2/3;
+    padding: 5px;
+    margin: 4rem;
+}
+
+p {
+    font-size: 1.2rem;
+    font-family: 'Padauk',Arial, sans-serif;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+h1{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+.like{
+    font-size: 3rem;
+    font-family: 'Padauk', Times, serif;
+    color: #c3c1c7;
+    width:70%;
+    margin-top: 1rem;
+}
+#intro{
+    font-size: 1.5rem;
+    font-family: 'Padauk', Times, serif;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 70%;
+}
+#intro a:link{
+    color: #dbd7e4;
+    font-size:2rem;
+    text-decoration: underline;
+}
+#intro a:visited{
+    color: #c031d3;
+}
+#course-link{
+    font-size: 1.7rem;
+}
+
+footer{
+    grid-row:3/4;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.social-media-icon {
+    color:rgb(240, 234, 234);
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* about me style */
+.aboutme-link {
+    text-decoration: underline;
+    color: #c3c1c7;
+}
+
+#brief-intro{
+    font-size: 1.5rem;
+    font-family: 'Padauk', Times, serif;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 70%;
+}
+
+/*education style*/
+
+#neu-logo{
+    display: inline-block;
+    height:20px;
+    width:20px;
+}
+#neu-degree{
+    display: inline-block;
+    font-size: 1.2rem;
+    font-family: 'Padauk', Times, serif;
+    color: #f6f4fa;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 70%;
+}
+.course-detail, .project-details {
+    width:80%;
+}
+
+/*contact style*/
+contact-email {
+    color: #c3c1c7;
+}
+
+/* dynamic page  style*/
+#theme-button{
+    grid-column: -2/-1;
+    width: 50%;
+    position:relative;
+    top: -10px;
+    color: black;
+    font-size: 1rem;
+    font-family: 'Padauk', Times, serif;
+    border-radius: 5px;  
+}
+
+form {
+    position: relative;
+    top : -30px;
+    left: 24rem;
+}
+
+.body-light{
+    background-image: none;
+    background-color: #f6f4fa;
+    color:black;
+}
+
+.light-theme{
+    color:black;
+}
