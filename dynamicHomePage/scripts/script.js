@@ -110,14 +110,14 @@ function displayResult(e){
     const today = new Date(timeElapsed);
     if(document.querySelector('#Date').checked){
     //format Wed May 25 2022
-    text = today.toDateString();
+    text = `Current Date: ${today.toDateString()}`;
     } else if(document.querySelector('#Time').checked){
     //format 14:00:00 PM
-    text = today.toLocaleTimeString();
+    text = `Local Time: ${today.toLocaleTimeString()}`;
     }
     resultDisplay.innerText = text;
     form.reset();
     
 }
-
+resultDisplay.innerText = `Local Time: ${new Date(Date.now()).toLocaleTimeString()}`;
 form.addEventListener('submit', displayResult);
