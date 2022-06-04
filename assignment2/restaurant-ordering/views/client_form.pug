@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='first_name') First Name:
+      input#first_name.form-control(type='text', placeholder='First name (Christian)' name='first_name' required='true' value=(undefined===client ? '' : client.first_name) )
+      label(for='family_name') Family Name:
+      input#family_name.form-control(type='text', placeholder='Family name (Surname)' name='family_name' required='true' value=(undefined===client ? '' : client.family_name))
+    div.form-group
+      label(for='phone') Phone Number:
+      input#phone.form-control(type='text', name='phone_number' required='true' value=(undefined===client ? '' : client.phone) )
+    div.form-group
+      label(for='address') Address:
+      input#address.form-control(type='text', name='address' required='true' value=(undefined===client ? '' : client.address) )
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

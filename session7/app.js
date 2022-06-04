@@ -143,8 +143,6 @@ async function readAndWriteFile(){
 readAndWriteFile();
 
 
-
-
 //activity 2 fetch API and render on page using pug template engine
 
 //fetch create  a new promise

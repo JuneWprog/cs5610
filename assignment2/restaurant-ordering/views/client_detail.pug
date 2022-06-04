@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+  h1 Client: #{client.name}
+  p #{client.contact}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Orders
+    
+    dl
+    each order in client_orders
+      dt 
+        a(href=book.url) #{order.title}
+      dd #{order.status}
+
+    else
+      p This client has no order.
+      
+  hr
+  p
+    a(href=client.url+'/delete') Delete client
+  p
+    a(href=client.url+'/update') Update client
