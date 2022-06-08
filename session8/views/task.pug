@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+head
+title Task Viewer
+body
+h1 You are viewing Task Id:  #{id}
+p Task Title: #{title}
+p "#{username}" is responsible for this task
+if completed 
+    p Task status: "Task Completed"
+else
+    p Task status: "Task Not Completed"
