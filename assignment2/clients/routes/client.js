@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const path = require("path");
 const { ObjectId } = require("mongodb");
 const {saveClientToDB, readAllClients, readOneDocument} = require('../database.js');
 const { body, validationResult } = require('express-validator');
@@ -8,13 +7,13 @@ const { body, validationResult } = require('express-validator');
 
 /// Client ROUTES ///
 // GET request for list of all Clients.
-router.get('/', async function (req, res){
+router.get('/', async function (req, res, next){
     try {
         const data = await readAllClients();
         //res.json(data);
         res.render('client_list',  {title: 'Client List', client_list: data});
     } catch (err) {
-        console.log(err);
+        return next(err);
     }
 });
 
@@ -34,13 +33,12 @@ router.post('/newclient',
     .isAlphanumeric().withMessage('First name has non-alphanumeric characters.'),
     body('family_name').trim().isLength({ min: 1 }).escape().withMessage('Family name must be specified.')
         .isAlphanumeric().withMessage('Family name has non-alphanumeric characters.'),
-    body('phone_number').trim().isLength({ min: 6 }).escape().withMessage('Phone number must be specified.')
-    .isInt().withMessage('Phone number must be an integer.'),
+    body('phone_number').trim().isLength({ min: 6 }).escape().withMessage('Phone number must be specified.'),
     body('address').trim().isLength({ min: 1 }).escape().withMessage('Address must be specified.'),
     body('city').trim().isLength({ min: 1 }).escape().withMessage('City must be specified.')
-    .isAlphanumeric().withMessage('City has non-alphanumeric characters.')],
+    ],
     // Process request after validation and sanitization.
-    async function (req, res){
+    async function (req, res, next){
         //validate the request
         const errors =  await validationResult(req);
         if (!errors.isEmpty()) {
@@ -55,14 +53,14 @@ router.post('/newclient',
                 let id = req.body._id.toString();
                 res.redirect(`/clients/${id}`);
             } catch (err) {
-                console.log(err);
+                return next(err);
             }
         }
     }
 );
 
 // GET request for one Client.
-router.get('/:clientId', async function (req, res) {
+router.get('/:clientId', async function (req, res, next) {
     try{
         const data = await readOneDocument({_id:ObjectId(req.params.clientId)})
         res.render("client_detail.pug", {
@@ -74,14 +72,9 @@ router.get('/:clientId', async function (req, res) {
             city: data.city
         });
     }catch(err){
-
+        return next(err);
     }
 });
-
-
-
-
-
 
 
 module.exports = router;
