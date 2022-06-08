@@ -1,7 +1,7 @@
 <h1>CS5610Assignment2</h1>
 
 <h2>Client Management System</h2>
-[Client Management System](https://github.com/JuneWprog/cs5610/tree/assignment2)
+[Client Management System](https://github.com/JuneWprog/cs5610/tree/assignment2)<br>
 A web app using node.js and Express that does Create and Read operations using MongoDB.
 <hr>
 <h3>Home page: </h3>
