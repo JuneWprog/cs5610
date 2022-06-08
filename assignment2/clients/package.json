@@ -1,11 +1,11 @@
 {
-  "name": "restaurant-ordering",
+  "name": "client-management-system",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "serverstart": " SET DEBUG=restaurant-ordering:* npm run devstart"
+    "serverstart": " SET DEBUG=client-management-systemg:* npm run devstart"
   },
   "dependencies": {
     "async": "^3.2.3",
