@@ -1,7 +1,12 @@
 const { MongoClient } = require("mongodb");
+//using .env file to store the mongodb connection string
 require("dotenv").config();
 
-const mongoClient = new MongoClient(process.env.uri, {
+
+//process.env.MONGODB_URI is the mongodb connection string 
+//need to set the mongodb connection string in heroku config variable
+var mongoDB = process.env.MONGODB_URI || process.env.uri;
+const mongoClient = new MongoClient(mongoDB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
