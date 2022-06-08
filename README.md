@@ -8,13 +8,13 @@ A web app using node.js and Express that does Create and Read operations using M
 uri: localhost:3000
 
 <h3>Clients page: </h3>
-Show lists of all the existing clients in the database
+Show lists of all the existing clients in the database<br>
 uri: localhost:3000/clients
 <h3>Create Client page: </h3>
-Add a new client to the database using a form 
+Add a new client to the database using a form<br>
 uri: localhost:3000/clients/newclient
 <h3>Client Detail page: </h3>
-Show details of each individual client when the client selects
+Show details of each individual client when the client selects<br>
 uri: localhost:3000/clients/:clientId
 
 **Email:**wang.jun6@northeastern.edu
