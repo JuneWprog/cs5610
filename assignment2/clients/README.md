@@ -4,7 +4,8 @@
 [Client Management System](https://github.com/JuneWprog/cs5610/tree/assignment2)<br>
 A web app using node.js and Express that does Create and Read operations using MongoDB.
 <hr>
-## Objectives
+##
+## Objectives<br>
 1. Create a database on mongodb atlas (using a available atlas setting up)<br>
 2. Create a collection in the databse<br>
 3. Display all the Clients  in a web page<br>
