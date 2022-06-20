@@ -149,41 +149,70 @@ function createPost(post) {
 
 //promise chaining
 
-doSomething()
-.then(function(result) {
-  return doSomethingElse(result);
-})
-.then(function(newResult) {
-  return doThirdThing(newResult);
-})
-.then(function(finalResult) {
-  console.log('Got the final result: ' + finalResult);
-})
-.catch(failureCallback);
+// doSomething()
+// .then(function(result) {
+//   return doSomethingElse(result);
+// })
+// .then(function(newResult) {
+//   return doThirdThing(newResult);
+// })
+// .then(function(finalResult) {
+//   console.log('Got the final result: ' + finalResult);
+// })
+// .catch(failureCallback);
 
 
-const name = document.querySelector('#name');
-const delay = document.querySelector('#delay');
-const button = document.querySelector('#set-alarm');
-const output = document.querySelector('#output');
+// const name = document.querySelector('#name');
+// const delay = document.querySelector('#delay');
+// const button = document.querySelector('#set-alarm');
+// const output = document.querySelector('#output');
 
-function alarm(person, delay) {
-  return new Promise((resolve, reject) => {
-    if (delay < 0) {
-      throw new Error('Alarm delay must not be negative');
+// function alarm(person, delay) {
+//   return new Promise((resolve, reject) => {
+//     if (delay < 0) {
+//       throw new Error('Alarm delay must not be negative');
+//     }
+//     window.setTimeout(() => {
+//       resolve(`Wake up, ${person}!`);
+//     }, delay);
+//   });
+// }
+
+// button.addEventListener('click', async () => {
+//   try {
+//     const message = await alarm(name.value, delay.value);
+//     output.textContent = message;
+//   }
+//   catch (error) {
+//     output.textContent = `Couldn't set alarm: ${error}`;
+//   }
+// });
+
+let promise = new Promise((resolve, reject) => {
+    resolve("Success");
+    reject(new Error("Failure"));
+    resolve("Success");
+});
+
+promise.then((message) => {console.log(message);}).catch((error) => {console.log(error);});
+
+let done = false;
+const isItDoneYet = function () {
+    return new Promise((resolve, reject) => {
+    if (done) {
+    const workDone = 'Here is the thing I built';
+    resolve(workDone);
+    } else {
+    const why = 'Still working on something else';
+    reject(why);
     }
-    window.setTimeout(() => {
-      resolve(`Wake up, ${person}!`);
-    }, delay);
-  });
+    });
 }
 
-button.addEventListener('click', async () => {
-  try {
-    const message = await alarm(name.value, delay.value);
-    output.textContent = message;
-  }
-  catch (error) {
-    output.textContent = `Couldn't set alarm: ${error}`;
-  }
-});
+isItDoneYet()
+.then(data => {
+console.log(data);
+})
+.catch(err => {
+console.error(err);
+})

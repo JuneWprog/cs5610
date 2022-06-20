@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    each client in client_list
+      li 
+        a(href='/clients/' + client._id) #{client.first_name} #{client.family_name}
+        | !{' '} (Phone: #{client.phone_number})
+
+
+
+    else
+      li There are no clients.
+
