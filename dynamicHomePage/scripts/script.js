@@ -120,4 +120,8 @@ function displayResult(e){
     
 }
 resultDisplay.innerText = `Local Time: ${new Date(Date.now()).toLocaleTimeString()}`;
+<<<<<<< HEAD
 form.addEventListener('submit', displayResult);
+=======
+form.addEventListener('submit', displayResult);
+>>>>>>> master
